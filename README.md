@@ -118,6 +118,13 @@ Une partie de _Bang!_ est représentée par une instance de la classe `Game`. Ce
 
 Pour démarrer une partie, il faut spécifier le nombre de joueurs qui y participent ainsi que la liste des cartes à utiliser comme pile de réserve. Le code du constructeur de la classe `Game` vous est entièrement fourni (normalement vous n'avez pas à le modifier).
 
+Voici les conditions de victoire et de fin de partie :
+* le shérif et ses adjoints (`DEPUTY`) gagnent si le shérif est vivant alors que tous les hors-la-loi et le renégat (`RENEGADE`) sont morts ;
+* le renégat (`RENEGADE`) gagne s'il réussit à tuer le shérif en dernier (tous les autres joueurs étant déjà morts) ;
+* les hors-la-loi (`OUTLAW`) gagnent dans tous les autres cas :
+  * si le shérif est mort et un des hors-la-loi est encore en vie ;
+  * si le shérif est mort et il reste deux autres joueurs vivant dans la partie.
+
 Le diagramme de classes **simplifié** ci-dessous illustre une vue d'ensemble de l'application. Ce diagramme ne contient que les classes principales avec les attributs, méthodes et relations essentiels. Certaines méthodes vous sont données et les autres vous aurez à les écrire. Comme indiqué précédemment, vous pouvez ajouter d'autres classes, méthodes et attributs si cela vous semble nécessaire.
 
 ![Diagramme de classes de la solution](ressources/diagrammeDeClasses.svg)
@@ -143,7 +150,7 @@ L'interface utilisateur que vous aurez à gérer sera entièrement en ligne de c
 
 L'intégralité du code source du projet doit résider dans le dépôt GitHub associé à votre équipe de projet. Vous devez compléter les classes Java qui vous sont données et ajouter des nouvelles classes si nécessaire.
 
-Toutes les méthodes qui lèvent une exception avec l'instruction `throw new RuntimeException("Méthode non implémentée !")` doivent être complétées selon les spécifications (en respectant leurs signatures). Vous pouvez éventuellement ajouter des attributs et méthodes aux classes, lorsque cela vous semble nécessaire.
+Toutes les méthodes qui lèvent une exception avec l'instruction `throw new RuntimeException("Méthode non implémentée !")` doivent être complétées selon les spécifications (en respectant leurs signatures). Vous êtes encouragés à ajouter des attributs et méthodes aux classes, lorsque cela vous semble nécessaire. La modification du corps des méthodes qui vous sont fournies est possible à condition de ne pas modifier le fonctionnement général de ces fonctions (décrit dans la spécification des méthodes).
 
 **Rappel : pas de modification des signatures des méthodes/attributs qui vous sont fournis.**
 
@@ -152,10 +159,9 @@ Cette fonction servira simplement à exécuter manuellement une partie et à fai
 
 #### Évaluation
 
-L'évaluation du projet se fera à l'aide de **tests unitaires** automatisés. L'ensemble des cartes et différentes actions du jeu seront évaluées de cette manière. Les tests sont faits indépendamment du choix de cartes pour la partie exécutée par la méthode `main(String args[])`.
+L'évaluation du projet se fera à l'aide de **tests unitaires** automatisés. L'ensemble des cartes et de personnages, ainsi que la classe `Game`et `Player` seront évaluées de cette manière. Les tests sont faits indépendamment du choix de cartes pour la partie exécutée par la méthode `main(String args[])`.
 
 Un premier jeu de tests vous est fourni (comme d'habitude dans le répertoire `src/test/java`) pour que vous puissiez vérifier le bon fonctionnement des fonctionnalités de base. Puis nous utiliserons un second jeu de tests (secret) pour l'évaluation finale.
-
 
 Il est donc attendu que les projets rendus passent le premier jeu de tests sans erreurs (afin d'avoir une moyenne de 8/20). Naturellement, vous devez également vérifier par vous-mêmes (en écrivant d'autres tests unitaires) que le projet se comporte correctement dans les différents cas particuliers qui peuvent se produire et qui ne sont pas nécessairement couverts par les tests qui vous ont été fournis.
 
