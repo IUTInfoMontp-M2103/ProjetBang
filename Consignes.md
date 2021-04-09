@@ -2,6 +2,7 @@
 
 ### Consignes pour le fork
 Les étapes à suivre par chaque équipe pour organiser correctement votre projet :
+
   0. Constituez une équipe de 3 ou 4 étudiants (issus du même groupe de TD, et de préférence du même sous-groupe)
   1. __Un seul membre de l'équipe__ fera le fork avec le lien GitHub Classroom (càd acceptera l'affectation du projet sur GitHub Classroom) : https://classroom.github.com/g/XfAlmVYQ
   2. Au moment de l'acceptation de l'invitation, ce membre d'équipe choisira un nom d'équipe. Ce nom sera constitué des noms de famille de chaque membre accolés par ordre alphabétique. Par exemple, si les noms sont Dupont, Robert, Martin et Durand, alors l'équipe s'appellera : `DupontDurantMartinRobert`.
